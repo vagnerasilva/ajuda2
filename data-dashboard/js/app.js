@@ -159,8 +159,15 @@ function targetAll(place, year) {
   var targetSprint = [];
   var targetHSE = [];
   var targetTech = [];
-
+  console.log("################ ###########")
+  console.log("################ ###########")
+  console.log("################ for ###########")
+  console.log(data[place][year]['students'][0]['sprints'])
+  console.log("################ for ###########")
+  console.log("################ ###########")
+  console.log("################ ###########")
   for (k in data[place][year]['students'][0]['sprints']) {
+    console.log(data[place][year]['students'][0]['sprints'])
     targetSprint[k] = 0;
     targetHSE[k] = 0;
     targetTech[k] = 0;
@@ -185,14 +192,43 @@ function targetAll(place, year) {
             console.log("################ ###########")
             console.log("################ ###########")
             for (j in data[place][year]['students'][i]['sprints']) {
-              if (data[place][year]['students'][i]['sprints'][j]['score']['tech'] >= 1260 && data[place][year]['students'][i]['sprints'][j]['score']['hse'] >= 840) {
+              targetSprint[j] = 0;
+              targetHSE[j] = 0;
+              targetTech[j] = 0;
+              console.log("################ ###########")
+              console.log("################ verificando aqui ###########")
+              console.log(data[place][year]['students'][i]['sprints'][j]['score'] )
+              console.log("################ verificando aqui ###########")
+              console.log("################ ###########")
+              if (data[place][year]['students'][i]['sprints'][j]['score'].tech >= 1260 && data[place][year]['students'][i]['sprints'][j]['score'].hse >= 840) {
+                console.log("primeiro if ")
+                console.log("VALOR ANTES")
+                console.log(j)
+                console.log(targetSprint)
+                console.log("VALOR ANTES")
                 targetSprint[j] += 1;
+               
+                console.log(targetHSE)
               }
-              if (data[place][year]['students'][i]['sprints'][j]['score']['tech'] >= 1260) {
+              if (data[place][year]['students'][i]['sprints'][j]['score'].tech >= 1260) {
+                console.log("segundo if ")
+                console.log("VALOR ANTES")
+                console.log(j)
+                console.log(targetSprint)
+                console.log("VALOR ANTES")
                 targetTech[j] += 1;
+                
+                console.log(targetHSE)
               }
-              if (data[place][year]['students'][i]['sprints'][j]['score']['hse'] >= 840) {
+              if (data[place][year]['students'][i]['sprints'][j]['score'].hse >= 840) {
+                console.log("terceiro if ")
+                console.log("VALOR ANTES")
+                console.log(j)
+                console.log(targetSprint)
+                console.log("VALOR ANTES")
                 targetHSE[j] += 1;
+                
+                console.log(targetHSE)
               }
             }
           }else{
